@@ -5,6 +5,7 @@ using Soenneker.OpenApi.Fixer.Registrars;
 using Soenneker.Mistral.Runners.OpenApiClient.Utils;
 using Soenneker.Mistral.Runners.OpenApiClient.Utils.Abstract;
 using Soenneker.Utils.File.Download.Registrars;
+using Soenneker.Utils.Yaml.Registrars;
 
 namespace Soenneker.Mistral.Runners.OpenApiClient;
 
@@ -25,6 +26,7 @@ public static class Startup
                 .AddSingleton<IFileOperationsUtil, FileOperationsUtil>()
                 .AddRunnersManagerAsSingleton()
                 .AddOpenApiFixerAsSingleton()
+                .AddYamlUtilAsSingleton()
                 .AddFileDownloadUtilAsSingleton()
                 .AddKiotaUtilAsSingleton();
 
