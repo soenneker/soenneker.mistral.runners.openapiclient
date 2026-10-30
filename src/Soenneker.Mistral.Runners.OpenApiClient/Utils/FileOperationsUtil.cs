@@ -63,7 +63,7 @@ public sealed class FileOperationsUtil : IFileOperationsUtil
         await _fileUtil.DeleteIfExists(targetFilePath, cancellationToken: cancellationToken);
         await _fileUtil.DeleteIfExists(jsonFilePath, cancellationToken: cancellationToken);
 
-        string openApiDocumentUrl = _configuration["Mistral:ClientGenerationUrl"] ?? "https://raw.githubusercontent.com/mistralai/platform-docs-public/refs/heads/main/openapi.yaml";
+        string openApiDocumentUrl = _configuration["Mistral:ClientGenerationUrl"] ?? "https://docs.mistral.ai/openapi.yaml";
 
         string? filePath = await _fileDownloadUtil.Download(openApiDocumentUrl,
             targetFilePath, fileExtension: ".yaml", cancellationToken: cancellationToken);
